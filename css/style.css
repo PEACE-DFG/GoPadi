@@ -1,5 +1,5 @@
 :root {
-    --primary: #f5c906;
+    --primary: #f5a506;
     --secondary: #FF6922;
     --light: white;
     --dark: #e3eb0ef9d3;
@@ -8,8 +8,8 @@
 .back-to-top {
     position: fixed;
     display: none;
-    right: 45px;
-    bottom: 45px;
+    right: 20px;
+    bottom: 90px;
     z-index: 99;
 }
 
@@ -246,22 +246,15 @@
 /*** Category ***/
 .cat-item div {
     background: #FFFFFF;
-    border: 1px dashed var(--primary);
     transition: .5s;
 }
 
-.cat-item:hover div {
-    background: var(--primary);
-    border-color: transparent;
-}
+
 
 .cat-item div * {
     transition: .5s;
 }
 
-.cat-item:hover div * {
-    color: var(--dark) !important;
-}
 
 
 /*** Property List ***/
@@ -535,14 +528,14 @@
     color: var(--primary);
     font-size: 18px;
     line-height: 50px;
-    border: 1px solid var(--primary);
+    border: 1px solid rgb(2, 2, 51);
     text-align: center;
     margin: auto;
   }
 
   td,th{
     border: 1px solid grey;
-    text-align: justify;
+    /* text-align: justify; */
   }
   table{
     border-radius: 12px;
@@ -553,3 +546,6 @@
     background-color: #f5c90673;
   }
  
+  li{
+    list-style-type: none;
+  }
