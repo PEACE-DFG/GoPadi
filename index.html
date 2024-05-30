@@ -887,8 +887,12 @@
           <!-- Main Javascript -->
           <script src="js/main.js"></script>
           <script type="text/javascript" src="https://cdn.emailjs.com/dist/email.min.js"></script>
+          <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 
           <script type="text/javascript">
+            (function() {
+              emailjs.init("SZjqaer8yBGsbT3BH");
+            })();
             document.addEventListener('DOMContentLoaded', function() {
               document.querySelector('form').addEventListener('submit', function(event) {
                 event.preventDefault(); // Prevent the default form submission
@@ -900,7 +904,7 @@
                 var message = document.getElementById('message').value;
           
                 // Send the email using EmailJS
-                emailjs.send('service_cwu9a0j', 'template_w3r0myh', {
+                emailjs.send('service_6off2ll', 'template_bajimk8', {
                   name: name,
                   email: email,
                   subject: subject,
@@ -908,11 +912,19 @@
                 })
                 .then(function(response) {
                   console.log('SUCCESS!', response.status, response.text);
-                  alert('Message sent successfully!');
-                }, function(error) {
+                  Swal.fire({
+                      icon: 'success',
+                      title: 'Message Sent',
+                      text: 'Your message has been sent successfully!'
+                  });
+              }, function(error) {
                   console.error('FAILED...', error);
-                  alert('Failed to send message. Please try again later.');
-                });
+                  Swal.fire({
+                      icon: 'error',
+                      title: 'Message Failed',
+                      text: 'Failed to send message. Please try again later.'
+                  });
+                })
               });
             });
           </script>
